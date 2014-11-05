@@ -2,7 +2,6 @@
 import threading
 
 from transwarp import db
-from encodings import latin_1
 
 def doSelect():
     result = db.select('select * from itgfz_member where company like \'%%%s%%\'' % u'国贸')
