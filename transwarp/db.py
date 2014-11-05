@@ -1,8 +1,6 @@
 #-*- encoding: utf-8 -*-
 import threading
 
-import MySQLdb
-
 from transwarp.dbconn import Dbconn
 import types
 
