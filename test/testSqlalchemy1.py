@@ -13,7 +13,7 @@ from sqlalchemy.sql.sqltypes import String, Integer, Text
 
 
 Base = declarative_base()
-engine = create_engine('mysql://%s:%s@%s/%s?charset=utf8' % ('root', 'root', '172.16.109.105:3306', 'itgfz2014'))
+engine = create_engine('mysql://%s:%s@%s/%s?charset=utf8' % ('root', 'root', '172.16.10.170:3306', 'itgfz2014'))
 
 class Member(Base):
     __tablename__ = 'itgfz_member'
@@ -23,7 +23,7 @@ class Member(Base):
     passport = Column(String(20))
     email = Column(String(20))
     recmsg = relation('Message',backref='itgfz_message')
-    sendmsg = relation('Message',backref='itgfz_message')
+#     sendmsg = relation('Message',backref='itgfz_message')
     
 class Message(Base):
     __tablename__ = 'itgfz_message'
@@ -32,7 +32,7 @@ class Message(Base):
     title = Column(String(20))
     content = Column(Text)
     touser = Column(Integer,ForeignKey('itgfz_member.username'))
-    fromuser = Column(Integer,ForeignKey('itgfz_member.username'))
+#     fromuser = Column(Integer,ForeignKey('itgfz_member.username'))
     
 class Info_24(Base):
     __tablename__ = 'itgfz_info_24'
@@ -51,12 +51,12 @@ class Info_data_24(Base):
 if __name__ == '__main__':
     session = create_session(bind=engine)
 #     session = Session(bind=engine)
-    query = session.query(Member).filter(Member.userid=='1')
+    query = session.query(Member).filter(Member.userid==9)
     ms = query.all()
     for m in ms:
         for s in m.recmsg:
             print s.title
-    print [m.recmsg for m in ms]
+    print [m for m in ms]
 
     pass
 
