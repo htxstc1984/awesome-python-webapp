@@ -1,6 +1,8 @@
 eclipse.preferences.version=1
 encoding//test/test2.py=utf-8
 encoding//test/test3.py=utf-8
+encoding//test/testJinja2.py=utf-8
+encoding//test/testMongo.py=utf-8
 encoding//test/testSqlalchemy.py=utf-8
 encoding//test/testSqlalchemy1.py=utf-8
 encoding//transwarp/db.py=utf-8

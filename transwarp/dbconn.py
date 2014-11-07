@@ -21,7 +21,7 @@ class Dbconn(dict):
             return MySQLdb.connect(host=p['host'], port=int(p['port']), user=p['user'], passwd=p['passwd'], charset=p['charset'], db=p['db'])
         elif(self.initParas['drivername'] == 'mssql'):
             p = self.initParas
-            return pymssql.connect(host=p['host'], user=p['user'], password=p['passwd'], database=p['db'],charset='utf8')
+#             return pymssql.connect(host=p['host'], user=p['user'], password=p['passwd'], database=p['db'],charset='utf8')
         else:
             raise BaseException('不支持此数据库')
     
