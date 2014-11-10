@@ -1,1 +1,8 @@
-<html>{{name}}</html>
+<html>
+{%- raw -%}
+{{name}},{{ wel|truncate(5, True) }}
+{%- endraw %}
+## for k,v in [('a',1),('b',2),('c',3)]:
+	{{k}}:{{v}}
+## endfor
+</html>

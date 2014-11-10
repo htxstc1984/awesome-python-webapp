@@ -10,6 +10,8 @@ from pymongo.database import Database
 from pymongo.mongo_client import MongoClient
 from pymongo.collection import Collection
 
+from gridfs import GridFS
+
 if __name__ == '__main__':
     con = pymongo.Connection('172.16.10.170', 27017)
     db = Database(con, 'test')
