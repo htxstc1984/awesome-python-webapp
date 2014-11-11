@@ -105,7 +105,7 @@ def select(sql, *args):
     global _db_ctx
     cur = _db_ctx.cursor()
     num = cur.execute(sql, *args)
-    print '查询语句：' + sql + '，共有' + str(num) + '条记录'
+    print u'查询语句：' + sql + u'，共有' + str(num) + u'条记录'
     print cur.description
 #     records = [x for x in cur.fetchall()]
     records = []

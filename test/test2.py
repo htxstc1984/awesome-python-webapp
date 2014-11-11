@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 import threading
-
+import sys
+    
+sys.path.append('../')
 from transwarp import db
 
 def doSelect():
-    result = db.select('select * from itgfz_member where company like \'%%%s%%\'' % u'国贸')
+    result = db.select(u'select * from itgfz_member where company like \'%%%s%%\'' % u'国贸')
 #     result = db.select('select top 20 psnname from bd_psndoc')
     
     for r in result:
@@ -36,6 +38,7 @@ def doSelect():
 #     t.join()
 
 if __name__ == '__main__':
+    
     
     doSelect()
         
